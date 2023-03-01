@@ -3,7 +3,9 @@
 <!-- Directive Structurelle ngFor, ngIf etc... -->
 <div *ngFor="let product of products">
     <h3>
-        <a [title]="product.name + ' Plus de Details'">
+        <a 
+        [title]="product.name + ' Plus de Details'"
+        [routerLink]="['/products', product.id]">
             {{ product.name }}
         </a>
     </h3>
