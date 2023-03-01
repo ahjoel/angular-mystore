@@ -1,0 +1,6 @@
+<!-- Button sera active lorsque la valeur d'un produit sera à 700 -->
+<p *ngIf="produit && produit.price > 700">
+    <!-- Lors du clique sur le boutton cela déclenchera un évènement vers le composant parent 
+    ProductListComponent -->
+    <button type="button" (click)="notify.emit()">Notify Me</button>
+</p>

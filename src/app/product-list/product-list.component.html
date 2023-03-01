@@ -1,6 +1,28 @@
 <h2>Products</h2>
 
+<!-- Directive Structurelle ngFor, ngIf etc... -->
+<div *ngFor="let product of products">
+    <h3>
+        <a [title]="product.name + ' Plus de Details'">
+            {{ product.name }}
+        </a>
+    </h3>
 
+    <p *ngIf="product.description">
+        Description : {{ product.description }}
+    </p>
+
+    <button type="button" (click)="share()">
+        Partager
+    </button>
+
+    <!-- Avec @Input d'un composant parent au fils c'est [] -->
+    <!-- Avec @Output d'un composant fils au parent c'est () -->
+    <app-product-alerts
+        [produit]="product"
+        (notify)="onNotify()">
+    </app-product-alerts>
+</div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
